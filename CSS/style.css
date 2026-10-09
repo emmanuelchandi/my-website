@@ -1,0 +1,248 @@
+/* =========================================
+   Part D: Styling the Page
+   ========================================= */
+
+/* 1. Coherent color palette, readable fonts, and line height */
+:root {
+    /* Light Mode Default Colors */
+    --primary-color: #0b2b5c;    
+    --primary-light: #3b82f6;    
+    --secondary-color: #f59e0b;  
+    --bg-color: #f8fafc;         
+    --text-color: #334155;       
+    --card-bg: rgba(255, 255, 255, 0.85); 
+    --border-color: #e2e8f0;     
+}
+
+/* =========================================
+   DARK MODE THEME OVERRIDES
+   ========================================= */
+body.dark-theme {
+    --primary-color: #60a5fa;    
+    --primary-light: #3b82f6;
+    --secondary-color: #fbbf24;  
+    --bg-color: #0f172a;         
+    --text-color: #f8fafc;       
+    --card-bg: rgba(30, 41, 59, 0.85); 
+    --border-color: #334155;     
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* =========================================
+   HEADER & CTA BUTTONS
+   ========================================= */
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e1b4b 100%);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
+header p { margin-top: 0.5rem; font-size: 1.1rem; opacity: 0.9; }
+
+/* Theme Toggle Button */
+.theme-btn {
+    margin-top: 20px;
+    padding: 10px 24px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+.theme-btn:hover { background-color: white; color: var(--primary-color); transform: translateY(-2px); }
+
+/* View My Projects Button (Part C, Step 2) */
+.cta-btn {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 10px;
+    padding: 10px 24px;
+    background-color: var(--secondary-color);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.cta-btn:hover { background-color: white; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+/* =========================================
+   NAVIGATION & MOBILE MENU
+   ========================================= */
+nav {
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--secondary-color);
+    transition: background-color 0.4s ease;
+}
+
+/* Hidden by default on mobile */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a:focus { background-color: var(--secondary-color); color: #000; outline: none; }
+
+/* Mobile Menu Button */
+.menu-btn {
+    display: none; /* Hidden on desktop */
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem;
+    margin: 0 auto;
+    width: auto;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* =========================================
+   MAIN CONTENT & CONTAINERS
+   ========================================= */
+main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.content-section {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px); 
+    transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.3s ease;
+}
+.content-section:hover { transform: translateY(-3px); box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); }
+
+h2 { color: var(--primary-color); border-bottom: 3px solid var(--secondary-color); padding-bottom: 0.5rem; margin-top: 0; display: inline-block; }
+h3 { color: var(--primary-color); margin-top: 1.5rem; }
+
+/* =========================================
+   SKILLS GRID
+   ========================================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+.skill-card {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+.skill-card h3 { margin-top: 0; border-bottom: none; }
+
+/* =========================================
+   MEDIA
+   ========================================= */
+img, video { max-width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+/* =========================================
+   GALLERY VIEWER
+   ========================================= */
+.gallery-viewer { text-align: center; margin-top: 1rem; }
+#gallery-image { margin: 0 auto 15px auto; border: 3px solid var(--border-color); }
+#gallery-caption { font-weight: bold; font-size: 1.1rem; color: var(--primary-color); margin-bottom: 15px; }
+#prev-btn, #next-btn { width: auto; padding: 0.5rem 1.5rem; margin: 0 5px; }
+
+/* =========================================
+   TABLES & FORMS
+   ========================================= */
+table { width: 100%; border-collapse: collapse; margin-top: 1rem; background-color: var(--card-bg); border-radius: 8px; overflow: hidden; }
+caption { font-weight: bold; margin-bottom: 0.5rem; color: var(--primary-color); font-size: 1.1rem; text-align: left; }
+th, td { border: 1px solid var(--border-color); padding: 0.75rem; text-align: left; }
+th { background-color: var(--primary-color); color: white; }
+tr:nth-child(even) { background-color: rgba(0, 0, 0, 0.02); }
+body.dark-theme tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.05); }
+
+.form-group { margin-bottom: 1rem; }
+label { display: block; font-weight: bold; margin-bottom: 0.25rem; color: var(--primary-color); }
+input[type="text"], input[type="email"], input[type="number"], textarea {
+    width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px;
+    font-family: inherit; box-sizing: border-box; background-color: var(--bg-color); color: var(--text-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+input:focus, textarea:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
+
+button { background-color: var(--primary-color); color: white; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; font-family: inherit; width: 100%; }
+button:hover { background-color: var(--primary-light); transform: scale(1.02); }
+
+/* =========================================
+   FORM PREVIEW & FOOTER
+   ========================================= */
+#form-feedback { margin-top: 15px; padding: 10px; border-radius: 6px; font-weight: bold; }
+#form-preview { margin-top: 15px; padding: 15px; border: 2px dashed var(--primary-color); background-color: var(--card-bg); border-radius: 8px; }
+#form-preview h4 { margin-top: 0; color: var(--primary-color); }
+
+footer { text-align: center; padding: 2rem 1rem; background-color: var(--primary-color); color: white; margin-top: 3rem; border-top: 3px solid var(--secondary-color); }
+footer a { color: var(--secondary-color); text-decoration: none; font-weight: bold; }
+footer a:hover { text-decoration: underline; }
+
+/* =========================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================= */
+@media (min-width: 768px) {
+    button { width: auto; min-width: 150px; }
+    #prev-btn, #next-btn { width: auto; }
+    header { padding: 4rem 1rem; }
+}
+
+@media (max-width: 600px) {
+    /* Mobile Navigation Logic */
+    .menu-btn { display: block; margin-bottom: 10px; }
+    
+    #nav-menu {
+        display: none; /* Hide menu by default on mobile */
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+    }
+    
+    #nav-menu.show {
+        display: flex; /* Show menu when the button is clicked */
+    }
+    
+    nav a { display: block; width: 100%; text-align: center; }
+    .content-section { padding: 1.5rem; }
+    header h1 { font-size: 2rem; }
+    .cta-btn { margin-left: 0; display: block; width: fit-content; margin: 15px auto 0 auto; }
+}

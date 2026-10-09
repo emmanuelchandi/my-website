@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website - ICT251</title>
+    <!-- Linking the stylesheet -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <!-- Part B, Step 1: Header -->
+    <header>
+        <h1>Welcome to My World</h1>
+        <p>Student Portfolio | ICT251 Web Technologies</p>
+        
+        <!-- THEME TOGGLE BUTTON (Feature 2) -->
+        <button id="theme-toggle" class="theme-btn">Switch to Dark Mode</button>
+        
+        <!-- VIEW MY PROJECTS BUTTON (Part C, Step 2) -->
+        <a href="#skills" class="cta-btn">View My Projects</a>
+    </header>
+
+    <!-- Part B, Step 1 & 3: Navigation -->
+    <nav>
+        <!-- MOBILE NAVIGATION BUTTON (Feature 4) -->
+        <button id="menu-toggle" class="menu-btn" aria-label="Toggle navigation">☰ Menu</button>
+        
+        <ul id="nav-menu">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#hobbies">My Hobbies</a></li>
+            <li><a href="#skills">My Skills</a></li>
+            <li><a href="#learning-plan">My Learning Plan</a></li>
+            <li><a href="#photos">My Photos</a></li>
+            <li><a href="#media">My Media</a></li>
+            <li><a href="#calculator">Study Calculator</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Part B, Step 1: Main content area -->
+    <main>
+        
+        <!-- Section 1: About Me -->
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>Hello! My name is Alex Rivera, and I am a second-year student passionate about web development and design. I enjoy learning how to build interactive and responsive websites from scratch. When I am not coding, I love exploring new technologies, reading science fiction, and playing football with my friends.</p>
+        </section>
+
+        <!-- Section 2: My Hobbies -->
+        <section id="hobbies" class="content-section">
+            <h2>My Hobbies</h2>
+            <ul>
+                <li>Web Development and Coding</li>
+                <li>Playing Football</li>
+                <li>Reading Science Fiction Novels</li>
+            </ul>
+        </section>
+
+        <!-- Section 3: My Skills (New requirement) -->
+        <section id="skills" class="content-section">
+            <h2>My Skills & Projects</h2>
+            <p>Here are three examples of what I have learned so far:</p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>HTML5 Structure</h3>
+                    <p>Building the skeleton of web pages using semantic tags.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>CSS3 Styling</h3>
+                    <p>Using Flexbox, Grid, and variables to create responsive designs.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>JavaScript Interactivity</h3>
+                    <p>Adding dynamic features like form validation and theme switching.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: My Learning Plan (Includes Study Hours Calculator) -->
+        <section id="learning-plan" class="content-section">
+            <h2>My Learning Plan</h2>
+            <h3>My Learning Steps</h3>
+            <ol>
+                <li>Master HTML5 and CSS3 fundamentals.</li>
+                <li>Learn JavaScript to add interactivity to websites.</li>
+                <li>Understand how to deploy websites using GitHub and Render.</li>
+            </ol>
+            
+            <h3>My Schedule</h3>
+            <table>
+                <caption>Weekly Study Plan</caption>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Topic</th>
+                        <th>Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Monday</td><td>HTML5</td><td>2</td></tr>
+                    <tr><td>Wednesday</td><td>CSS3</td><td>2</td></tr>
+                    <tr><td>Friday</td><td>JavaScript</td><td>3</td></tr>
+                </tbody>
+            </table>
+
+            <!-- FEATURE 3: Study Hours Calculator HTML -->
+            <div style="margin-top: 2rem; padding: 1rem; border: 1px dashed var(--border-color); border-radius: 8px;">
+                <h3>Study Hours Calculator</h3>
+                <form id="calc-form">
+                    <div class="form-group">
+                        <label for="hours-per-day">Planned hours per day:</label>
+                        <input type="number" id="hours-per-day" step="0.5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="days-per-week">Days per week (1-7):</label>
+                        <input type="number" id="days-per-week" min="1" max="7" required>
+                    </div>
+                    <button type="submit">Calculate Total</button>
+                </form>
+                <p id="calc-result" style="margin-top: 15px; font-weight: bold;"></p>
+            </div>
+        </section>
+
+        <!-- Section 5: My Photos (Includes Gallery Viewer) -->
+        <section id="photos" class="content-section">
+            <h2>My Photos</h2>
+            <p>A selection of photos from my journey.</p>
+            
+            <!-- FEATURE 2: Gallery Viewer HTML -->
+            <div class="gallery-viewer" style="text-align: center;">
+                <img id="gallery-image" src="images/photo1.jpg" alt="Portfolio photo" style="max-width: 100%; height: auto; margin: 0 auto; display: block; border-radius: 8px;">
+                <p id="gallery-caption" style="margin-top: 10px; font-weight: bold;">My first portfolio photo</p>
+                <div style="margin-top: 10px;">
+                    <button id="prev-btn" style="width: auto; padding: 0.5rem 1rem;">Previous</button>
+                    <button id="next-btn" style="width: auto; padding: 0.5rem 1rem;">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: My Media -->
+        <section id="media" class="content-section">
+            <h2>My Media</h2>
+            <h3>Introduction Video</h3>
+            <video controls width="100%">
+                <source src="videos/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p><em>Summary: A short video introducing my background and interests.</em></p>
+
+            <h3>Audio Recording</h3>
+            <audio controls style="width: 100%;">
+                <source src="videos/voice.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p><em>Summary: An audio clip explaining my learning goals for this course.</em></p>
+        </section>
+
+        <!-- Section 7: Contact (Compulsory Form Validation) -->
+        <section id="contact" class="content-section">
+            <h2>Contact Me</h2>
+            <p><strong>Browser demonstration only - no message is sent.</strong></p>
+            
+            <!-- FEATURE 1: Compulsory Contact Form Validation HTML -->
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+
+            <button type="submit">Send Message</button>
+
+                <!-- Feedback and Preview -->
+                <div id="form-feedback" style="margin-top: 10px; font-weight: bold;"></div>
+
+                <div id="form-preview" style="display: none; margin-top: 15px; padding: 10px; border: 1px solid var(--border-color); background: var(--card-bg); border-radius: 6px;">
+                    <h4>Validated Data Preview:</h4>
+                    <p><strong>Name:</strong> <span id="preview-name"></span></p>
+                    <p><strong>Email:</strong> <span id="preview-email"></span></p>
+                    <p><strong>Message:</strong> <span id="preview-message"></span></p>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Alex Rivera | ICT251 Web Technologies</p>
+        <p><a href="https://github.com/yourusername/your-repo" target="_blank">View Source on GitHub</a></p>
+    </footer>
+
+    <!-- Load the JavaScript file -->
+    <script src="js/script.js" defer></script>
+</body>
+</html>
